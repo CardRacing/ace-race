@@ -2,6 +2,7 @@ package main.java.com.race.core.player;
 
 import main.java.com.race.core.GameView;
 import main.java.com.race.model.bet.Bet;
+import main.java.com.race.model.bet.BetResult;
 
 /**
  * AI 플레이어의 공통 부모(추상 클래스).
@@ -28,7 +29,7 @@ public abstract class AIPlayer implements Player {
     public abstract Bet placeBet(GameView io, int min, int max);
 
     @Override
-    public void applyResult(com.race.model.bet.BetResult result) {
+    public void applyResult(BetResult result) {
         if (result != null) this.balance = result.finalBalance();
     }
 }
