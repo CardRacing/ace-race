@@ -16,24 +16,32 @@ public class HumanPlayer implements Player{
 
     @Override
     public String name() {
-        return "";
+        return name;
     }
 
     @Override
     public int balance() {
-        return 0;
+        return balance;
     }
 
     @Override
     public Bet placeBet(GameView io, int min, int max) {
-        return null;
+
     }
 
     @Override
     public void applyResult(BetResult result) {
-        if (result != null) {
-            this.balance = result.finalBalance();
+        if (result != null){
+            return;
         }
+        this.balance = result.finalBalance();
+        boolean isWin = result.win();
+        int payout = result.payout();
+        int finalBalance = result.finalBalance();
+
+        System.out.println("|===============[경기결과]===============|");
+        System.out.println(result.bet().toString() + " | 승리: " + (isWin ? "O" : "X") + " | 획득금: " + payout + " | 잔액: " + finalBalance);
+        System.out.println("|=======================================|");
     }
 
 
