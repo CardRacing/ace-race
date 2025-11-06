@@ -3,9 +3,11 @@ package main.java.com.race.model.bet;
 import main.java.com.race.model.card.Suit;
 
 public class Bet {
-    private final String playerId; // 누가 배팅했는지
-    private final Suit suit;       // 배팅한 문양 (enum)
-    private final int amount;      // 배팅 금액
+    private String playerId; // 누가 배팅했는지
+    private Suit suit;       // 배팅한 문양 (enum)
+    private int amount;      // 배팅 금액
+
+    public Bet() {}
 
     public Bet(String playerId, Suit suit, int amount) {
         this.playerId = playerId;

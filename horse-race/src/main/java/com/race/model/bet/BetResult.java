@@ -2,10 +2,10 @@ package main.java.com.race.model.bet;
 
 public class BetResult {
 
-        private final Bet bet;          // 결과
-        private final boolean isWin;    // 승리 여부
-        private final int payout;   // 보상금액
-        private final int finalBalance; // 최종금액
+        private Bet bet;          // 결과
+        private boolean isWin;    // 승리 여부
+        private int payout;   // 보상금액
+        private int finalBalance; // 최종금액
 
         /**
          * 베팅 결과를 생성한다.

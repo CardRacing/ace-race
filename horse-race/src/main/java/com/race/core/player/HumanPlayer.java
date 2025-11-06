@@ -3,15 +3,53 @@ package main.java.com.race.core.player;
 import main.java.com.race.core.GameView;
 import main.java.com.race.model.bet.Bet;
 import main.java.com.race.model.bet.BetResult;
+import main.java.com.race.model.card.Suit;
+
+import java.util.Map;
+import java.util.Random;
 
 public class HumanPlayer implements Player{
 
-    private final String name;
+    private String name;
     private int balance;
+    private Suit suit;
 
-    public HumanPlayer(String name, int balance) {
+    public HumanPlayer() {}
+
+    public HumanPlayer(String name, int balance, Suit suit) {
         this.name = name;
         this.balance = balance;
+        this.suit = suit;
+    }
+
+    public Bet random(){
+        Bet bet1 = new Bet(this.name,this.suit,this.balance);
+
+        return bet1;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public void setSuit(Suit suit) {
+        this.suit = suit;
     }
 
     @Override
@@ -22,11 +60,6 @@ public class HumanPlayer implements Player{
     @Override
     public int balance() {
         return balance;
-    }
-
-    @Override
-    public Bet placeBet(GameView io, int min, int max) {
-
     }
 
     @Override
