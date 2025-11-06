@@ -6,6 +6,14 @@ import main.java.com.race.model.bet.BetResult;
 
 public class HumanPlayer implements Player{
 
+    private final String name;
+    private int balance;
+
+    public HumanPlayer(String name, int balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
     @Override
     public String name() {
         return "";
@@ -23,6 +31,10 @@ public class HumanPlayer implements Player{
 
     @Override
     public void applyResult(BetResult result) {
-
+        if (result != null) {
+            this.balance = result.finalBalance();
+        }
     }
+
+
 }
