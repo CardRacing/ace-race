@@ -4,7 +4,7 @@ import main.java.com.race.model.bet.Bet;
 import main.java.com.race.model.bet.BetResult;
 import main.java.com.race.model.card.Suit;
 
-import main.java.util.List;
+import java.util.List;
 import java.util.Map;
 
 public interface PayoutPolicy {
