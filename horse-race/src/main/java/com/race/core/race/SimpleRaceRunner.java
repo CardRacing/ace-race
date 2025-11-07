@@ -11,11 +11,7 @@ import main.java.com.race.model.race.TrackContext;
 
 import java.util.Map;
 
-/**
- * 기본 레이스 실행기 구현.
- */
 public class SimpleRaceRunner implements RaceRunner {
-
     @Override
     public Suit run(Deck deck, TrackContext ctx, RaceRule rule, GameView io, RaceLog log) {
         int turn = 1;
@@ -54,4 +50,3 @@ public class SimpleRaceRunner implements RaceRunner {
         }
     }
 }
-

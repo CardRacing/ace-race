@@ -2,7 +2,7 @@ package main.java.com.race.core.util;
 
 import main.java.com.race.model.card.Suit;
 
-public final class InputParsers {
+public class InputParsers {
 
     private InputParsers() {}
 
