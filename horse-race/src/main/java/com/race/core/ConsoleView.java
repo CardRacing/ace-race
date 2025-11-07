@@ -27,23 +27,33 @@ public class ConsoleView implements GameView{
 
     @Override
     public void showStatus(Map<Suit, Integer> positions, int goal) {
-        if (positions == null || positions.isEmpty()) {
-            println("[경주 정보 없음]");
-            return;
-        }
 
-        StringBuilder sb = new StringBuilder();
-        sb.append('[');
-        Suit[] order = Suit.values();
-        for (int i = 0; i < order.length; i++) {
-            Suit suit = order[i];
+        System.out.println(" 현재 경주 상황 \n");
+
+        String finishLine = "|";
+
+        for (Suit suit : Suit.values()) {
             int pos = positions.getOrDefault(suit, 0);
-            sb.append(suit.symbol()).append(pos);
-            if (i < order.length - 1) sb.append(' ');
+
+            // 진행된 거리: ■, 남은 거리: □
+            StringBuilder track = new StringBuilder();
+            for (int i = 0; i < pos && i < goal; i++) {
+                track.append("■");
+            }
+            for (int i = pos; i < goal; i++) {
+                track.append("□");
+            }
+
+            // 결승선 추가
+            track.append(finishLine);
+
+            // 우승 시 표시
+            String status = pos >= goal ? " [우승]" : "";
+
+            // 무늬 + 트랙 출력
+            System.out.printf("%s %s%s%n", suit.symbol(), track.toString(), status);
         }
-        sb.append(" / Goal:").append(goal).append(']');
-        println(sb.toString());
-    }
+        }
 
     @Override
     public void showBets(List<Bet> bets) {
@@ -65,7 +75,7 @@ public class ConsoleView implements GameView{
             println("우승 정보가 없습니다.");
             return;
         }
-        println(String.format("WINNER: %s %s 🏇", winner.symbol(), winner.name()));
+        println(String.format("WINNER: %s %s ", winner.symbol(), winner.name()));
     }
 
     @Override

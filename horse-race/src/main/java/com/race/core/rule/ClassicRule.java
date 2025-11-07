@@ -7,8 +7,8 @@ import java.util.Objects;
 import java.util.Random;
 
 public class ClassicRule implements RaceRule {
-    private static final int MIN = 7;
-    private static final int MAX = 10;
+    private static final int MIN = 4;
+    private static final int MAX = 6;
 
     @Override
     public int trackLength(Random rng) {

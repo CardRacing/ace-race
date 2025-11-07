@@ -12,6 +12,12 @@ import main.java.com.race.model.race.TrackContext;
 import java.util.Map;
 
 public class SimpleRaceRunner implements RaceRunner {
+
+
+    private static final long TURN_DELAY = 1500;
+    private static final long FINISH_DELAY = 1200;
+
+
     @Override
     public Suit run(Deck deck, TrackContext ctx, RaceRule rule, GameView io, RaceLog log) {
         int turn = 1;
@@ -41,12 +47,21 @@ public class SimpleRaceRunner implements RaceRunner {
             Map<Suit, Integer> positions = ctx.positions();
             io.showStatus(positions, ctx.track().goal());
 
+            sleep(TURN_DELAY);
+
             if (rule.isFinish(horse, ctx.track())) {
                 log.recordWinner(horse);
                 return horse.suit();
             }
 
             turn++;
+        }
+    }
+    private void sleep(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 }
