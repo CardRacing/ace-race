@@ -4,7 +4,7 @@ public enum Suit {
     SPADE(0,"♠"),
     HEART(1,"♥"),
     DIAMOND(2,"♦"),
-    CLUB(3,"♣");
+    CLOVER(3,"♣");
 
     private final int code;
     private final String symbol;

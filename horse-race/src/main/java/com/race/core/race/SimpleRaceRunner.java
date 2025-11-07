@@ -14,7 +14,7 @@ import java.util.Map;
 public class SimpleRaceRunner implements RaceRunner {
 
 
-    private static final long TURN_DELAY = 1000;
+    private static final long TURN_DELAY = 1500;
     private static final long FINISH_DELAY = 1200;
 
 

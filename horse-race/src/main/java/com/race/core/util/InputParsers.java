@@ -30,15 +30,15 @@ public class InputParsers {
                 return Suit.DIAMOND;
             case "3":
             case "C":
-            case "CLUB":
+            case "CLOVER":
             case "CLUBS":
-                return Suit.CLUB;
+                return Suit.CLOVER;
         }
 
         if (value.equals("♠")) return Suit.SPADE;
         if (value.equals("♥")) return Suit.HEART;
         if (value.equals("♦")) return Suit.DIAMOND;
-        if (value.equals("♣")) return Suit.CLUB;
+        if (value.equals("♣")) return Suit.CLOVER;
 
         throw new IllegalArgumentException("알 수 없는 무늬 입력: " + raw);
     }

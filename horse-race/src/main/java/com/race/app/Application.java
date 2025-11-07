@@ -77,6 +77,20 @@ public class Application {
             view.showBets(new ArrayList<>(bets.values()));
             view.println("");
 
+            try {
+                view.println("");
+                view.println(" 모든 베팅이 완료되었습니다!");
+                Thread.sleep(1000);
+                for (int i = 3; i >= 1; i--) {
+                    view.println(i + "...");
+                    Thread.sleep(800);
+                }
+                view.println("출발!!! 🏁");
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+
             Suit winner = runner.run(deck, ctx, rule, view, log);
             view.showWinner(winner);
 
@@ -153,7 +167,7 @@ public class Application {
     private static Bet promptHumanBet(GameView view, HumanPlayer human) {
         Suit suit = null;
         while (suit == null) {
-            view.println("베팅할 말의 무늬를 입력하세요 (0: spade ♠, 1: heart ♥, 2: diamond ♦, 3: clova ♣): ");
+            view.println("베팅할 말의 무늬를 입력하세요 (0: spade ♠, 1: heart ♥, 2: diamond ♦, 3: clover ♣): ");
             String input = view.readLine();
             try {
                 suit = InputParsers.parseSuit(input);
