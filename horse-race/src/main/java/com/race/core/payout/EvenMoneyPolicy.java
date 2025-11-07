@@ -36,8 +36,6 @@ public class EvenMoneyPolicy implements PayoutPolicy {
 
             currentBalances.put(playerId, after);
 
-            // BetResult 생성자는 네 구현에 맞춰 조정
-            // 흔한 형태: new BetResult(bet, win, delta, after)
             results.add(new BetResult(bet, win, delta, after));
         }
 

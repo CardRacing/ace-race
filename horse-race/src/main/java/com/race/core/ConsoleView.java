@@ -11,8 +11,6 @@ public class ConsoleView implements GameView{
 
     private final Scanner sc = new Scanner(System.in);
 
-
-
     public int ireadLine() {
         return sc.nextInt();
     }

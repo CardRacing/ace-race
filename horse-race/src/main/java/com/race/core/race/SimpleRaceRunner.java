@@ -11,10 +11,8 @@ import main.java.com.race.model.race.TrackContext;
 
 import java.util.Map;
 
-/**
- * 기본 레이스 실행기 구현.
- */
 public class SimpleRaceRunner implements RaceRunner {
+
 
     private static final long TURN_DELAY = 1000;
     private static final long FINISH_DELAY = 1200;
@@ -67,4 +65,3 @@ public class SimpleRaceRunner implements RaceRunner {
         }
     }
 }
-

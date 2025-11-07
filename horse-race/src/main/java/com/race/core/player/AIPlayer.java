@@ -4,9 +4,7 @@ import main.java.com.race.model.bet.BetResult;
 
 import java.util.Objects;
 
-/**
- * CPU 참가자.
- */
+
 public class AIPlayer implements Player {
 
     private final String name;
@@ -35,5 +33,6 @@ public class AIPlayer implements Player {
         if (result == null) return;
         this.balance = result.finalBalance();
     }
+
 }
 

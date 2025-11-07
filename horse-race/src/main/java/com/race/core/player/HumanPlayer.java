@@ -4,10 +4,7 @@ import main.java.com.race.model.bet.BetResult;
 
 import java.util.Objects;
 
-/**
- * 실제 유저를 나타내는 플레이어 모델.
- */
-public class HumanPlayer implements Player {
+public class HumanPlayer implements Player{
 
     private final String name;
     private int balance;
@@ -36,4 +33,3 @@ public class HumanPlayer implements Player {
         this.balance = result.finalBalance();
     }
 }
-

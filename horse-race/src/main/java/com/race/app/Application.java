@@ -22,17 +22,10 @@ import main.java.com.race.model.race.RaceLog;
 import main.java.com.race.model.race.Track;
 import main.java.com.race.model.race.TrackContext;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
-public final class Application {
-
+public class Application {
     private static final int INITIAL_BALANCE = 1000;
     private static final int MIN_BET = 100;
     private static final Random RNG = new Random();
@@ -160,7 +153,7 @@ public final class Application {
     private static Bet promptHumanBet(GameView view, HumanPlayer human) {
         Suit suit = null;
         while (suit == null) {
-            view.println("베팅할 말의 무늬를 입력하세요 (♠, ♥, ♦, ♣ / spade, heart 등): ");
+            view.println("베팅할 말의 무늬를 입력하세요 (0: spade ♠, 1: heart ♥, 2: diamond ♦, 3: clova ♣): ");
             String input = view.readLine();
             try {
                 suit = InputParsers.parseSuit(input);
@@ -262,4 +255,3 @@ public final class Application {
         view.println("");
     }
 }
-
